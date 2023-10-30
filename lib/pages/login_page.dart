@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                       )),
                       hintText: "Senha",
                       hintStyle: const TextStyle(
-                        color: Color.fromARGB(255, 13, 5, 5),
+                        color: Color.fromARGB(255, 247, 247, 247),
                       ),
                       prefixIcon: const Icon(
                         Icons.lock,
@@ -156,8 +156,14 @@ class _LoginPageState extends State<LoginPage> {
                     width: double.infinity,
                     child: TextButton(
                       onPressed: () {
-                        print(email);
-                        print(senha);
+                        if (email == "email@gmail.com" &&
+                            senha.trim() == "123") {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("Login efetuado com sucesso")));
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("Erro login")));
+                        }
                       },
                       style: ButtonStyle(
                           shape: MaterialStateProperty.all(
