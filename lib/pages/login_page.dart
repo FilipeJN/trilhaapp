@@ -157,8 +157,9 @@ class _LoginPageState extends State<LoginPage> {
                     width: double.infinity,
                     child: TextButton(
                       onPressed: () {
-                        if (email == "email@gmail.com" &&
-                            senha.trim() == "123") {
+                        if (email == "" && //email@gmail.com
+                            senha.trim() == "") {
+                          //123
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               content: Text("Login efetuado com sucesso")));
                           Navigator.pushReplacement(
