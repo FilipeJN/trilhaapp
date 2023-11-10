@@ -160,15 +160,16 @@ class _LoginPageState extends State<LoginPage> {
                         if (email == "" && //email@gmail.com
                             senha.trim() == "") {
                           //123
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                              content: Text("Login efetuado com sucesso")));
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text("Login efetuado com sucesso")));
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const MainPage()));
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text("Erro login")));
+                              const SnackBar(content: Text("Erro login")));
                         }
                       },
                       style: ButtonStyle(
